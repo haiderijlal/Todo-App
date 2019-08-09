@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
+    <title>Todos List</title>
+</head>
+<body>
+    <div id="container">
+        <h1>What do you want to add?</h1>
+        <input id="todoInput" type="text">
+        <ul id="todoList">
+        </ul>
+    </div>
+
+    <script id="list" type="text/x-handlebars-template">
+        {{#each todos}}
+        <li id="{{id}}">
+            <div id="dropdown-container" class="dropdown">
+                <i class="far fa-dot-circle"></i> 
+                <div class="dropdown-content">
+                    <span>Delete</span>
+                    <span>Completed</span>
+                    <span>Add</span>
+                </div>
+            </div>
+             {{#if completed}}
+            <input type="text" value="{{value}}" class="completedTodos">
+             {{else}}
+            <input type="text" value="{{value}}">
+            {{/if}}
+            {{#if todos}}
+            <ul>
+            {{> list}}
+            </ul>
+            {{/if}}
+        </li>
+        {{/each}}
+    </script>
+
+    <script id="main" type="x-handlebars-template">
+        <ul>
+        {{> list}}
+        </ul>
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script> -->
+    <script src="assets/js/app.js"></script>  
+</body>
+</html>
+
