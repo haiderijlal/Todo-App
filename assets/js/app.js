@@ -1,8 +1,3 @@
-// var todos = [{id: 1, completed: false, value: "one", todos:[{id: 2, completed: false, value: "two", todos:[]}]}, 
-//     {id: 3, completed: true, value: "three", todos:[{id: 4, completed: false, value: "four", todos:[]}, 
-//     {id: 5, completed: true, value: "five", todos:[]}]}, {id: 6, completed: false, value: "six", todos:[{id: 7, completed: false, value: "seven", todos:[]}]}, 
-//     {id: 8, completed: true, value: "eight", todos:[{id: 9, completed: false, value: "nine", todos:[{id: 17, completed: false, value: "seven", todos:[{id: 27, completed: false, value: "seven", todos:[]}]}]}, 
-//     {id: 10, completed: false, value: "ten", todos:[]}]}]
     
 var todos = []
 
@@ -12,24 +7,7 @@ var ESCAPE_KEY = 27;
 var listTemplate = document.getElementById("list").innerHTML
 Handlebars.registerPartial("list", listTemplate);
 
-
-//It should take text from input and add to the list.
-//It should render the todoList in the browser.
-//It should have image tag for each li instead of bullet point.
-//It should have dropdown for each li.
-//It should show input box as sublist on clicking "Add Sub Todo"
-//It should add subtodo to the todos on pressing enter.
-//It should edit existing todos and subtodos.
-//It should mark completed todos.
-//It should delete on clicking 'Delete' from dropdown list.
-//It should delete the new input box if 'esacpe' is presssed.
-//It should store the todos.
-//It should remove the dropdown as any options of it clicked.  (to be done)
-//It should mark all subtods completed if parent todo is marked completed.
-//If parent todo is marked completed and a new subtodo is added, parent todo should be unmarked.
- 
-
-var util = {                     
+var util = {                     //these two functions taken from todoMVC jQuery
     uuid: function () {                  
 
         var i, random;
